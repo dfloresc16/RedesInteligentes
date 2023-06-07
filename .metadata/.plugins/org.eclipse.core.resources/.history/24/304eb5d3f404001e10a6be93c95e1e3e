@@ -1,0 +1,11 @@
+spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=MSC
+spring.datasource.username=sa
+spring.datasource.password=040201
+spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServer2012Dialect
+
+# Configuración específica de Java 17
+spring.main.allow-bean-definition-overriding=true
+spring.autoconfigure.r2dbc=false
+spring.autoconfigure.jdbc=true

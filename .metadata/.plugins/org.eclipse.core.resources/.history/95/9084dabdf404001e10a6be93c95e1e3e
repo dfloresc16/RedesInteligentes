@@ -1,0 +1,5 @@
+spring.datasource.url=jdbc:sqlserver://DESKTOP-O1DGABA:1433;databaseName=MSC;TrustServerCertificate=True;
+spring.datasource.username=sa
+spring.datasource.password=040201
+spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+spring.jpa.show-sql=true

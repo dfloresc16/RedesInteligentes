@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package com.redesint.entity;
+
+/**
+ * @author Diego
+ *
+ */
+@Entit
+public class UsuariosHLR {
+
+}

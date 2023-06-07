@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package com.redesint.entity;
+
+import org.springframework.stereotype.Component;
+
+/**
+ * @author Diego
+ *
+ */
+@Component
+public class UsuariosHLR {
+
+}
