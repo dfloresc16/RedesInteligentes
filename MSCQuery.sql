@@ -1,44 +1,37 @@
-create database MSC
-use MSC
+create database MSC;
 
-create table fabricantesHLR(
-	idFabricante int not null IDENTITY(1,1) primary key,
-	fabricante varchar(10) not null
-);
-insert into fabricantesHLR values('XIAOMI')
-insert into fabricantesHLR values('IPHONE')
-insert into fabricantesHLR values('SAMSUNG')
-insert into fabricantesHLR values('HUAWEI')
-insert into fabricantesHLR values('GOOGLE')
+insert into fabricanteshlr(fabricante) values('XIAOMI');
+insert into fabricanteshlr(fabricante) values('IPHONE');
+insert into fabricanteshlr(fabricante) values('SAMSUNG');
+insert into fabricanteshlr(fabricante) values('HUAWEI');
+insert into fabricanteshlr(fabricante) values('GOOGLE');
 
-create table serviciosHLR(
-	idServicio int not null IDENTITY(1,1) primary key,
-	servicio varchar(3) not null
-);
-insert into serviciosHLR values('VOZ')
-insert into serviciosHLR values('SMS')
-insert into serviciosHLR values('MMS')
+insert into servicioshlr(servicio) values('VOZ');
+insert into servicioshlr(servicio)  values('SMS');
+insert into servicioshlr(servicio)  values('MMS');
 
-create table tarifasHLR(
-	idTarifa int not null IDENTITY(1,1) primary key,
-	tarifa varchar(15) not null
-);
-insert into tarifasHLR values('PREPAGO')
-insert into tarifasHLR values('POSPAGO')
+insert into tarifashlr(id_tarifa,tarifa) values(1,'PREPAGO');
+insert into tarifashlr(id_tarifa,tarifa) values(2,'POSPAGO');
 
-create table proveedoresHLR(
-	idProveedor int not null primary key,
-	proveedor varchar(10) not null
-);
-insert into proveedoresHLR values(90, 'TELCEL')
-insert into proveedoresHLR values(20, 'AT&T')
-
-
-create table usuariosHLR(
-	idUsuario varchar(10) not null primary key,
-	numeroAbonado varchar(4) not null,
-	mnc int not null references proveedores(idProveedor),
-	tipoPlan int not null references tarifas(idTarifa),
-	idEquipo int not null references fabricantes(idFabricante),
+insert into proveedoreshlr(id_proveedor,proveedor) values(90, 'TELCEL');
+insert into proveedoreshlr(id_proveedor,proveedor) values(20, 'AT&T');
+drop table usuarios;
+create table usuarios(
+	id_usuario varchar(10) not null,
+	numero_abonado varchar(4) not null,
+	mnc int not null,
+	tipo_plan int not null,
+	id_equipo int not null,
 	imei varchar(5) not null,
+    primary key(id_usuario)
 );
+
+
+INSERT INTO `msc`.`usuarios`(`id_usuario`,`numero_abonado`,`mnc`,`tipo_plan`,`id_equipo`,`imei`) VALUES ('andres','4585',90,1,1,'12345');
+INSERT INTO `msc`.`usuarios`(`id_usuario`,`numero_abonado`,`mnc`,`tipo_plan`,`id_equipo`,`imei`) VALUES ('diego','0110',20,2,4,'67890');
+INSERT INTO `msc`.`usuarios`(`id_usuario`,`numero_abonado`,`mnc`,`tipo_plan`,`id_equipo`,`imei`) VALUES ('victor','3578',90,1,3,'10021');
+INSERT INTO `msc`.`usuarios`(`id_usuario`,`numero_abonado`,`mnc`,`tipo_plan`,`id_equipo`,`imei`) VALUES ('abigail','3063',90,1,2,'23150');
+INSERT INTO `msc`.`usuarios`(`id_usuario`,`numero_abonado`,`mnc`,`tipo_plan`,`id_equipo`,`imei`) VALUES ('abdiel','1527',90,1,5,'67542');
+INSERT INTO `msc`.`usuarios`(`id_usuario`,`numero_abonado`,`mnc`,`tipo_plan`,`id_equipo`,`imei`) VALUES ('ana','2991',20,1,1,'87921');
+
+
