@@ -26,4 +26,34 @@ public class ProveedoresHLR {
 	@Column(name = "proveedor")
 	private String proveedor;
 
+	/**
+	 * @return the idProveedor
+	 */
+	public Integer getIdProveedor() {
+		return idProveedor;
+	}
+
+	/**
+	 * @param idProveedor the idProveedor to set
+	 */
+	public void setIdProveedor(Integer idProveedor) {
+		this.idProveedor = idProveedor;
+	}
+
+	/**
+	 * @return the proveedor
+	 */
+	public String getProveedor() {
+		return proveedor;
+	}
+
+	/**
+	 * @param proveedor the proveedor to set
+	 */
+	public void setProveedor(String proveedor) {
+		this.proveedor = proveedor;
+	}
+	
+	
+
 }

@@ -24,6 +24,35 @@ public class TarifasHLR {
 	
 	@Column(name = "tarifa")
 	private String tarifa;
+
+	/**
+	 * @return the idTarifa
+	 */
+	public Integer getIdTarifa() {
+		return idTarifa;
+	}
+
+	/**
+	 * @param idTarifa the idTarifa to set
+	 */
+	public void setIdTarifa(Integer idTarifa) {
+		this.idTarifa = idTarifa;
+	}
+
+	/**
+	 * @return the tarifa
+	 */
+	public String getTarifa() {
+		return tarifa;
+	}
+
+	/**
+	 * @param tarifa the tarifa to set
+	 */
+	public void setTarifa(String tarifa) {
+		this.tarifa = tarifa;
+	}
+	
 	
 
 }

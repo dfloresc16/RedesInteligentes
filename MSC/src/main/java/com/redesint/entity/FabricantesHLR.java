@@ -25,4 +25,34 @@ public class FabricantesHLR {
 	
 	@Column(name = "fabricante")
 	private String fabricante;
+
+	/**
+	 * @return the idFabricante
+	 */
+	public Integer getIdFabricante() {
+		return idFabricante;
+	}
+
+	/**
+	 * @param idFabricante the idFabricante to set
+	 */
+	public void setIdFabricante(Integer idFabricante) {
+		this.idFabricante = idFabricante;
+	}
+
+	/**
+	 * @return the fabricante
+	 */
+	public String getFabricante() {
+		return fabricante;
+	}
+
+	/**
+	 * @param fabricante the fabricante to set
+	 */
+	public void setFabricante(String fabricante) {
+		this.fabricante = fabricante;
+	}
+	
+	
 }
