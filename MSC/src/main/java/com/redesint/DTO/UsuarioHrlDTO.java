@@ -21,8 +21,6 @@ public class UsuarioHrlDTO {
 	
 	private String imei;
 	
-	
-	
 	/**
 	 * 
 	 */
