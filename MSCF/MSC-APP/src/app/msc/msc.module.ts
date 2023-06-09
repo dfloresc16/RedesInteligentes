@@ -20,8 +20,6 @@ import { FormsModule } from '@angular/forms';
   exports:[
     LoginComponent,
     HomePageComponent,
-
-
   ]
 })
 export class MscModule { }
