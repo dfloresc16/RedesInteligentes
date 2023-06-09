@@ -1,10 +1,10 @@
 export interface UsuarioHlrDTO{
-  idUsuario:String,
-  numAbonado:String,
+  idUsuario:string,
+  numAbonado:string,
   mnc:Number,
   tipoPlan:Number,
   idEquipo:Number,
-  imei:String
+  imei:string
 }
 
 
