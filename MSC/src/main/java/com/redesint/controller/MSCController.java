@@ -30,7 +30,7 @@ import com.redesint.DTO.CommonController;
  */
 @RestController
 @RequestMapping("/MSC")
-//@CrossOrigin(origins = "192.168.3.47:4200")
+//@CrossOrigin(origins = "http://192.168.3.47")
 @CrossOrigin(origins = "http://localhost:4200")
 public class MSCController {
 	
