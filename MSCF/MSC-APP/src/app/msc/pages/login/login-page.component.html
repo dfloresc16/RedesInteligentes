@@ -1,13 +1,26 @@
-<main class="flex items-center justify-center h-screen bg-gray-100">
+<main class="flex items-center justify-center h-screen bg-mybg">
 
-  <div class="bg-white w-96 p-10 rounded shadow-sm">
-      <label class="text-gray-700"> Nombre </label>
-      <input class="w-full py-2 bg-gray-50 text-gray-500 px-1 outline-none mb-4"  [(ngModel)]="nombreTxt">
-      <label class="text-gray-700"> Número telefónico </label>
-      <input class="w-full py-2 bg-gray-50 text-gray-500 px-1 outline-none mb-4">
-      <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded w-full" (click)="getDataHLRImplementation(nombreTxt)">
-        Button
+  <div class="bg-slate-50 bg-opacity-10 w-96 p-10 rounded shadow-sm">
+      <label class="text-white"> Nombre </label>
+      <input class="w-full py-2 bg-gray-50 text-black px-1 outline-none my-4 rounded-sm"  [(ngModel)]="nombreTxt">
+      <label class="text-white"> Número telefónico </label>
+      <input class="w-full py-2 bg-gray-50 text-black px-1 outline-none my-4 rounded-sm">
+
+
+      <label class ="text-white my-8"> Radiobase conectada </label>
+
+      <select id="Radiobase" class="bg-mybg  text-white w-full rounded-md  h-10 my-2">
+        <option selected> Seleccione radiobase</option>
+        <option value="90">Telcel</option>
+        <option value="20">AT&T</option>
+      </select>
+
+
+      <button class="my-8 bg-transparent hover:bg-primary text-white font-semibold hover:text-white py-2 px-4  border-2 border-primary hover:border-transparent rounded w-full" (click)="getDataHLRImplementation(nombreTxt)">
+        INGRESAR
       </button>
+
+
   </div>
 
 </main>
