@@ -1,3 +1,4 @@
+import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -7,12 +8,13 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 
 
-
 @NgModule({
   declarations: [
     HomePageComponent,
     LoginComponent,
+    ServicesPageComponent,
     NavbarComponent
+
   ],
   imports: [
     CommonModule,
@@ -21,6 +23,7 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
   ],
   exports:[
     LoginComponent,
+    ServicesPageComponent,
     HomePageComponent,
   ]
 })

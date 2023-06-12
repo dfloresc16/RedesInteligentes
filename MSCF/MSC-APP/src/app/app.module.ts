@@ -6,7 +6,6 @@ import {FormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
 import { MscModule } from './msc/msc.module';
 import { AppRoutingModule } from './app-routing.module';
-import { NavbarComponent } from './msc/pages/navbar/navbar.component';
 
 @NgModule({
   declarations: [
