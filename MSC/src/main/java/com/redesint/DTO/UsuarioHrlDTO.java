@@ -21,13 +21,7 @@ public class UsuarioHrlDTO {
 	
 	private String imei;
 	
-	/**
-	 * 
-	 */
-	public UsuarioHrlDTO() {
-	}
-
-
+	private Integer estadoVlr;
 
 	/**
 	 * @param idUsuario
@@ -36,18 +30,24 @@ public class UsuarioHrlDTO {
 	 * @param tipoPlan
 	 * @param idEquipo
 	 * @param imei
+	 * @param estadoVlr
 	 */
 	public UsuarioHrlDTO(String idUsuario, String numAbonado, Integer mnc, Integer tipoPlan, Integer idEquipo,
-			String imei) {
+			String imei, Integer estadoVlr) {
 		this.idUsuario = idUsuario;
 		this.numAbonado = numAbonado;
 		this.mnc = mnc;
 		this.tipoPlan = tipoPlan;
 		this.idEquipo = idEquipo;
 		this.imei = imei;
+		this.estadoVlr = estadoVlr;
 	}
 
-
+	/**
+	 * 
+	 */
+	public UsuarioHrlDTO() {
+	}
 
 	/**
 	 * @return the idUsuario
@@ -56,16 +56,12 @@ public class UsuarioHrlDTO {
 		return idUsuario;
 	}
 
-
-
 	/**
 	 * @param idUsuario the idUsuario to set
 	 */
 	public void setIdUsuario(String idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-
-
 
 	/**
 	 * @return the numAbonado
@@ -74,16 +70,12 @@ public class UsuarioHrlDTO {
 		return numAbonado;
 	}
 
-
-
 	/**
 	 * @param numAbonado the numAbonado to set
 	 */
 	public void setNumAbonado(String numAbonado) {
 		this.numAbonado = numAbonado;
 	}
-
-
 
 	/**
 	 * @return the mnc
@@ -92,16 +84,12 @@ public class UsuarioHrlDTO {
 		return mnc;
 	}
 
-
-
 	/**
 	 * @param mnc the mnc to set
 	 */
 	public void setMnc(Integer mnc) {
 		this.mnc = mnc;
 	}
-
-
 
 	/**
 	 * @return the tipoPlan
@@ -110,16 +98,12 @@ public class UsuarioHrlDTO {
 		return tipoPlan;
 	}
 
-
-
 	/**
 	 * @param tipoPlan the tipoPlan to set
 	 */
 	public void setTipoPlan(Integer tipoPlan) {
 		this.tipoPlan = tipoPlan;
 	}
-
-
 
 	/**
 	 * @return the idEquipo
@@ -128,16 +112,12 @@ public class UsuarioHrlDTO {
 		return idEquipo;
 	}
 
-
-
 	/**
 	 * @param idEquipo the idEquipo to set
 	 */
 	public void setIdEquipo(Integer idEquipo) {
 		this.idEquipo = idEquipo;
 	}
-
-
 
 	/**
 	 * @return the imei
@@ -146,8 +126,6 @@ public class UsuarioHrlDTO {
 		return imei;
 	}
 
-
-
 	/**
 	 * @param imei the imei to set
 	 */
@@ -155,5 +133,26 @@ public class UsuarioHrlDTO {
 		this.imei = imei;
 	}
 
+	/**
+	 * @return the estadoVlr
+	 */
+	public Integer getEstadoVlr() {
+		return estadoVlr;
+	}
+
+	/**
+	 * @param estadoVlr the estadoVlr to set
+	 */
+	public void setEstadoVlr(Integer estadoVlr) {
+		this.estadoVlr = estadoVlr;
+	}
+
+	@Override
+	public String toString() {
+		return "UsuarioHrlDTO [idUsuario=" + idUsuario + ", numAbonado=" + numAbonado + ", mnc=" + mnc + ", tipoPlan="
+				+ tipoPlan + ", idEquipo=" + idEquipo + ", imei=" + imei + ", estadoVlr=" + estadoVlr + "]";
+	}
+	
+	
 	
 }

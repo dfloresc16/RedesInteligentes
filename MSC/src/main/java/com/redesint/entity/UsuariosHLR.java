@@ -38,21 +38,9 @@ public class UsuariosHLR {
 	
 	@Column(name = "id_equipo")
 	private Integer idEquipo;
-	
-	/*@OneToOne
-	@JoinColumn(name = "mnc", referencedColumnName = "idProveedor")
-	private ProveedoresHLR proveedoresHLR;
-	
-	@OneToOne
-	@JoinColumn(name = "tipoPlan", referencedColumnName = "idTarifa")
-	private TarifasHLR tarifasHLR;
-	
-	@OneToOne 
-	@JoinColumn(name = "idEquipo", referencedColumnName = "idFabricante")
-	private FabricantesHLR fabricantesHLR;*/
-	
-	
-	
+
+	@Column(name = "estado_vlr")
+	private Integer estadoVlr;
 
 	/**
 	 * 
@@ -67,15 +55,17 @@ public class UsuariosHLR {
 	 * @param mnc
 	 * @param tipoPlan
 	 * @param idEquipo
+	 * @param estadoVlr
 	 */
 	public UsuariosHLR(String idUsuario, String numeroAbonado, String imei, Integer mnc, Integer tipoPlan,
-			Integer idEquipo) {
+			Integer idEquipo, Integer estadoVlr) {
 		this.idUsuario = idUsuario;
 		this.numeroAbonado = numeroAbonado;
 		this.imei = imei;
 		this.mnc = mnc;
 		this.tipoPlan = tipoPlan;
 		this.idEquipo = idEquipo;
+		this.estadoVlr = estadoVlr;
 	}
 
 	/**
@@ -160,6 +150,26 @@ public class UsuariosHLR {
 	 */
 	public void setIdEquipo(Integer idEquipo) {
 		this.idEquipo = idEquipo;
+	}
+
+	/**
+	 * @return the estadoVlr
+	 */
+	public Integer getEstadoVlr() {
+		return estadoVlr;
+	}
+
+	/**
+	 * @param estadoVlr the estadoVlr to set
+	 */
+	public void setEstadoVlr(Integer estadoVlr) {
+		this.estadoVlr = estadoVlr;
+	}
+
+	@Override
+	public String toString() {
+		return "UsuariosHLR [idUsuario=" + idUsuario + ", numeroAbonado=" + numeroAbonado + ", imei=" + imei + ", mnc="
+				+ mnc + ", tipoPlan=" + tipoPlan + ", idEquipo=" + idEquipo + ", estadoVlr=" + estadoVlr + "]";
 	}
 	
 	
