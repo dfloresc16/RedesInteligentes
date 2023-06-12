@@ -29,11 +29,12 @@ public class HLRService implements Serializable{
 
 	public UsuarioHrlDTO getInformationService(String nombre, String numAbonado) {
 		Optional<UsuariosHLR> findByidUsuario = repository.findById(nombre);
+		log.info(findByidUsuario.toString());
 		UsuarioHrlDTO usuarioHrlDTO = new UsuarioHrlDTO();
 		UsuariosHLR hlr = new UsuariosHLR();
 		if(findByidUsuario.isPresent()) {
-			if(!findByidUsuario.get().getIdUsuario().equals(nombre) || !findByidUsuario.get().getNumeroAbonado().equals(numAbonado)) {
-				if(findByidUsuario.get().getEstadoVlr() > 2) {
+			if(!findByidUsuario.get().getNumeroAbonado().equals(numAbonado)) {
+				if(findByidUsuario.get().getEstadoVlr() > 3) {
 					hlr.setIdUsuario(findByidUsuario.get().getIdUsuario());
 					hlr.setNumeroAbonado(findByidUsuario.get().getNumeroAbonado());
 					hlr.setMnc(findByidUsuario.get().getMnc());
@@ -42,6 +43,13 @@ public class HLRService implements Serializable{
 					hlr.setImei(findByidUsuario.get().getImei());
 					hlr.setEstadoVlr(0);
 					repository.save(hlr);
+					usuarioHrlDTO.setIdUsuario(hlr.getIdUsuario());
+					usuarioHrlDTO.setNumAbonado(hlr.getNumeroAbonado());
+					usuarioHrlDTO.setMnc(hlr.getMnc());
+					usuarioHrlDTO.setTipoPlan(hlr.getTipoPlan());
+					usuarioHrlDTO.setIdEquipo(hlr.getIdEquipo());
+					usuarioHrlDTO.setImei(hlr.getImei());
+					usuarioHrlDTO.setEstadoVlr(hlr.getEstadoVlr());
 				}else {
 					hlr.setIdUsuario(findByidUsuario.get().getIdUsuario());
 					hlr.setNumeroAbonado(findByidUsuario.get().getNumeroAbonado());
@@ -51,17 +59,25 @@ public class HLRService implements Serializable{
 					hlr.setImei(findByidUsuario.get().getImei());
 					hlr.setEstadoVlr(findByidUsuario.get().getEstadoVlr()+1);
 					repository.save(hlr);
+					usuarioHrlDTO.setIdUsuario(hlr.getIdUsuario());
+					usuarioHrlDTO.setNumAbonado(hlr.getNumeroAbonado());
+					usuarioHrlDTO.setMnc(hlr.getMnc());
+					usuarioHrlDTO.setTipoPlan(hlr.getTipoPlan());
+					usuarioHrlDTO.setIdEquipo(hlr.getIdEquipo());
+					usuarioHrlDTO.setImei(hlr.getImei());
+					usuarioHrlDTO.setEstadoVlr(hlr.getEstadoVlr());
 				}
 			}
+			usuarioHrlDTO.setIdUsuario(findByidUsuario.get().getIdUsuario());
+			usuarioHrlDTO.setNumAbonado(findByidUsuario.get().getNumeroAbonado());
+			usuarioHrlDTO.setMnc(findByidUsuario.get().getMnc());
+			usuarioHrlDTO.setTipoPlan(findByidUsuario.get().getTipoPlan());
+			usuarioHrlDTO.setIdEquipo(findByidUsuario.get().getIdEquipo());
+			usuarioHrlDTO.setImei(findByidUsuario.get().getImei());
+			usuarioHrlDTO.setEstadoVlr(findByidUsuario.get().getEstadoVlr());
 			//Validar el mnc y en caso de que no pertenezca mandar a insertar a VLR
 		}
-		usuarioHrlDTO.setIdUsuario(hlr.getIdUsuario());
-		usuarioHrlDTO.setNumAbonado(hlr.getNumeroAbonado());
-		usuarioHrlDTO.setMnc(hlr.getMnc());
-		usuarioHrlDTO.setTipoPlan(hlr.getTipoPlan());
-		usuarioHrlDTO.setIdEquipo(hlr.getIdEquipo());
-		usuarioHrlDTO.setImei(hlr.getImei());
-		usuarioHrlDTO.setEstadoVlr(hlr.getEstadoVlr());
+		
 		log.info(usuarioHrlDTO.toString());
 		return usuarioHrlDTO;
 	}

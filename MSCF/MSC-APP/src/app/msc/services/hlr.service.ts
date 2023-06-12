@@ -11,7 +11,7 @@ export class HlrService {
 
   private baseURL = "http://192.168.3.47:8080/MSC/HLR/";
 
-  getDataHlr(nombre:String):Observable<UsuarioHlrDTO>{
-    return this.httpClient.get<UsuarioHlrDTO>(`${this.baseURL}${nombre}`);
+  getDataHlr(nombre:String,numAbonado:String):Observable<UsuarioHlrDTO>{
+    return this.httpClient.get<UsuarioHlrDTO>(`${this.baseURL}${nombre}/${numAbonado}`);
   }
 }

@@ -4,7 +4,7 @@
       <label class="text-white"> Nombre </label>
       <input class="w-full py-2 bg-gray-50 text-black px-1 outline-none my-4 rounded-sm"  [(ngModel)]="nombreTxt">
       <label class="text-white"> Número telefónico </label>
-      <input class="w-full py-2 bg-gray-50 text-black px-1 outline-none my-4 rounded-sm">
+      <input class="w-full py-2 bg-gray-50 text-black px-1 outline-none my-4 rounded-sm" [(ngModel)]="numTxt">
 
 
       <label class ="text-white my-8"> Radiobase conectada </label>
@@ -16,7 +16,7 @@
       </select>
 
 
-      <button class="my-8 bg-transparent hover:bg-primary text-white font-semibold hover:text-white py-2 px-4  border-2 border-primary hover:border-transparent rounded w-full" (click)="getDataHLRImplementation(nombreTxt)">
+      <button class="my-8 bg-transparent hover:bg-primary text-white font-semibold hover:text-white py-2 px-4  border-2 border-primary hover:border-transparent rounded w-full" (click)="getDataHLRImplementation(nombreTxt,numTxt)">
         INGRESAR
       </button>
 

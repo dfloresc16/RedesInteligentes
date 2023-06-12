@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit{
 
   nombreTxt:string='';
-
+  numTxt:string = '';
   usuarioHlrDTO:UsuarioHlrDTO | undefined;
 
 
@@ -19,23 +19,30 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  getDataHLRImplementation(nombre:string){
+  getDataHLRImplementation(nombre:string,num:string){
     this.nombreTxt = nombre;
+    this.numTxt = num;
     console.log(this.nombreTxt);
-    this.hlrService.getDataHlr(this.nombreTxt).subscribe(dato =>{
+    this.hlrService.getDataHlr(this.nombreTxt,this.numTxt).subscribe(dato =>{
       this.usuarioHlrDTO = dato;
+      console.log(num)
+      console.log(nombre)
       console.log(dato)
 
-      if(dato.idUsuario != nombre){
-        Swal.fire({icon:'error',title:'Advertencia',text:'Algun dato es incorrecto'});
+      if(dato.body.idUsuario != nombre || dato.body.numAbonado != num){
+        localStorage.clear();
+        Swal.fire({icon:'error',title:'Advertencia',text:`Algun dato es incorrecto tienes ${Number(3)-dato.body.estadoVlr} intentos`});
+        if(this.usuarioHlrDTO.body.estadoVlr == 3){
+          this.router.navigate(['hlr'])
+        }
       }else{
         localStorage.clear();
-        localStorage.setItem('idEquipo',String(dato.idEquipo));
-        localStorage.setItem('idUsuario',dato.idUsuario);
-        localStorage.setItem('imei',dato.imei);
-        localStorage.setItem('mnc',String(dato.mnc));
-        localStorage.setItem('numAbonado',dato.numAbonado);
-        localStorage.setItem('tipoPlan',String(dato.tipoPlan));
+        localStorage.setItem('idEquipo',String(dato.body.idEquipo));
+        localStorage.setItem('idUsuario',dato.body.idUsuario);
+        localStorage.setItem('imei',dato.body.imei);
+        localStorage.setItem('mnc',String(dato.body.mnc));
+        localStorage.setItem('numAbonado',dato.body.numAbonado);
+        localStorage.setItem('tipoPlan',String(dato.body.tipoPlan));
         this.router.navigate(['hlr'])
       }
     })

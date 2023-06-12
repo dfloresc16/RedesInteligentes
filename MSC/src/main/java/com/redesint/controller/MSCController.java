@@ -22,8 +22,8 @@ import com.redesint.service.HLRService;
  */
 @RestController
 @RequestMapping("/MSC")
-//@CrossOrigin(origins = "http://192.168.3.47")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*",allowedHeaders = "*")
+//@CrossOrigin(origins = "http://localhost:4200")
 public class MSCController extends CommonController{
 	
 	@Autowired
