@@ -1,4 +1,4 @@
-package com.redesint.DTO;
+package com.redesint.controller;
 
 public class CommonController {
     /**

@@ -24,4 +24,18 @@ public class GenericResponseDTO<T> extends CommonResponse implements Serializabl
         super(success, httpStatus, errorCode, errorMessage, message);
         this.body = body;
     }
+
+	/**
+	 * @return the body
+	 */
+	public T getBody() {
+		return body;
+	}
+
+	/**
+	 * @param body the body to set
+	 */
+	public void setBody(T body) {
+		this.body = body;
+	}
 }
