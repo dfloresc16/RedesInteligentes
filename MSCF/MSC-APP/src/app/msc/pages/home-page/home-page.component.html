@@ -1,40 +1,41 @@
 <!-- Etiqueta de Navegacion -->
 
+<app-navbar> </app-navbar>
 
-<main class=" p-7 bg-mybg">
+<main class="flex items-center justify-center bg-mybg">
+  <div class="bg-white bg-opacity-10 w-4/5 p-2 rounded">
+    <p class="ml-10 p-2 font-medium text-5xl  text-white"> {{idUsuario}} </p>
 
-  <p class="p-8  font-bold text-5xl ... text-white"> {{idUsuario}} </p>
+    <div class=" p-12 grid grid-cols-2 gap-10 ">
+      <div class= "font-medium text-white">Número de abonado:</div>
+      <label class="text-white p-2 block">{{numAbonado}}</label>
 
-  <div class=" p-16 grid grid-cols-2 gap-10 ">
-    <div class="text-white">Número de abonado:</div>
-    <label class="text-white p-2 block">{{numAbonado}}</label>
+      <div class="text-white font-medium ">MNC:</div>
+      <label class="text-white p-2 block">{{mnc}}  </label>
 
-    <div class="text-white">MNC:</div>
-    <label class="text-white p-2 block">{{mnc}}</label>
+      <div class="text-white font-medium ">Compañía:</div>
+      <label class="text-white p-2 block">{{mnc}} </label>
 
-    <div class="text-white">Compañía:</div>
-    <label class="text-white p-2 block">{{mnc}}</label>
+      <div class="text-white font-medium ">Tarifa:</div>
+      <label class="text-white p-2 block">{{tipoPlan}} </label>
 
-    <div class="text-white">Tarifa:</div>
-    <label class="text-white p-2 block">{{tipoPlan}}</label>
+      <div class="text-white font-medium ">Equipo:</div>
+      <label class="text-white p-2 block">{{idEquipo}}</label>
 
-    <div class="text-white">Equipo:</div>
-    <label class="text-white p-2 block">{{idEquipo}}</label>
+      <div class="text-white font-medium ">IMEI:</div>
+      <label class="text-white p-2 block">{{imei}}</label>
 
-    <div class="text-white">IMEI:</div>
-    <label class="text-white p-2 block">{{imei}}</label>
-
-    <label class="text-white"> Estado </label>
-    <select id="estado" class="bg-mybg  text-white w-full rounded-md  h-10 my-2">
-      <option value="90">Libre</option>
-      <option value="20"> Bloqueado</option>
-    </select>
-    <p> </p>
-    <div> <button
-        class="my-8 bg-transparent hover:bg-primary text-white font-semibold hover:text-white py-2 px-4  border-2 border-primary hover:border-transparent rounded w-full">
-        Enviar
-      </button>
+      <label class="text-white font-medium"> Estado </label>
+      <select id="estado" class="bg-mybg  text-white w-full rounded-md  h-10 my-2">
+        <option value="90">Libre</option>
+        <option value="20"> Bloqueado</option>
+      </select>
+      <p> </p>
+      <div> <button
+          class="my-8 bg-transparent hover:bg-primary text-white font-semibold hover:text-white py-2 px-4  border-2 border-primary hover:border-transparent rounded w-full">
+          Enviar
+        </button>
+      </div>
     </div>
   </div>
-
 </main>
