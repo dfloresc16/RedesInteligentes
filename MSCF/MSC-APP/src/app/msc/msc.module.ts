@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './pages/navbar/navbar.component';
+import { VlrComponent } from './pages/vlr/vlr.component';
 
 
 @NgModule({
@@ -13,8 +14,8 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
     HomePageComponent,
     LoginComponent,
     ServicesPageComponent,
-    NavbarComponent
-
+    NavbarComponent,
+    VlrComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +26,7 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
     LoginComponent,
     ServicesPageComponent,
     HomePageComponent,
+    VlrComponent
   ]
 })
 export class MscModule { }

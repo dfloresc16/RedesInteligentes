@@ -9,9 +9,15 @@ export class HlrService {
 
   constructor(private httpClient: HttpClient,private router:Router) { }
 
-  private baseURL = "http://192.168.3.47:8080/MSC/HLR/";
+  private baseURL = "http://192.168.3.47:8080/MSC";
 
   getDataHlr(nombre:String,numAbonado:String):Observable<UsuarioHlrDTO>{
-    return this.httpClient.get<UsuarioHlrDTO>(`${this.baseURL}${nombre}/${numAbonado}`);
+    return this.httpClient.get<UsuarioHlrDTO>(`${this.baseURL}/HLR/${nombre}/${numAbonado}`);
   }
+
+  insertDataVlr(nombre:String,numAbonado:String):Observable<UsuarioHlrDTO>{
+    return this.httpClient.get<UsuarioHlrDTO>(`${this.baseURL}/VLR/${nombre}/${numAbonado}`);
+
+  }
+
 }
