@@ -31,11 +31,16 @@
         <option value="20"> Bloqueado</option>
       </select>
       <p> </p>
-      <div> <button
+      <div>
+        <button
+        (click)="getAuthentication()"
           class="my-8 bg-transparent hover:bg-primary text-white font-semibold hover:text-white py-2 px-4  border-2 border-primary hover:border-transparent rounded w-full">
           Enviar
         </button>
       </div>
     </div>
   </div>
+
+  <ng-template #libre></ng-template>
+
 </main>

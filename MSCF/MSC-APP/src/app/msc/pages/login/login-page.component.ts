@@ -30,12 +30,19 @@ export class LoginComponent implements OnInit {
 
       if (dato.body.idUsuario != nombre || dato.body.numAbonado != num) {
         localStorage.clear();
-        Swal.fire({ icon: 'error', title: 'Advertencia', text: `Algun dato es incorrecto tienes ${Number(3) - dato.body.estadoVlr} intentos` });
         if (this.usuarioHlrDTO.body.estadoVlr == 3) {
+
+          localStorage.clear();
+          localStorage.setItem('idEquipo', String(dato.body.idEquipo));
+          localStorage.setItem('idUsuario', dato.body.idUsuario);
+          localStorage.setItem('imei', dato.body.imei);
+          localStorage.setItem('mnc', String(dato.body.mnc));
+          localStorage.setItem('numAbonado', dato.body.numAbonado);
+          localStorage.setItem('tipoPlan', String(dato.body.tipoPlan));
           this.router.navigate(['vlr'])
         }
       } else {
-        if (selectedValue == String(20)) {
+        if (selectedValue != String(dato.body.mnc)) {
           console.log("Entre a vlr")
           this.router.navigate(['vlr'])
           localStorage.clear();
@@ -45,9 +52,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('mnc', String(dato.body.mnc));
           localStorage.setItem('numAbonado', dato.body.numAbonado);
           localStorage.setItem('tipoPlan', String(dato.body.tipoPlan));
-        }
-
-        if (selectedValue == String(90)) {
+        }else {
           console.log("Entre a hlr")
           this.router.navigate(['hlr'])
           localStorage.clear();
