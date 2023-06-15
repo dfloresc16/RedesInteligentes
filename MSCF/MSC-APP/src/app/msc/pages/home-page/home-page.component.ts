@@ -13,7 +13,13 @@ export class HomePageComponent {
   public mnc = localStorage.getItem("mnc");
   public numAbonado = localStorage.getItem("numAbonado");
   public tipoPlan = localStorage.getItem("tipoPlan");
+  public valueList?: string;
 
+  getAuthentication(){
+    const selectElement = document.getElementById('estado') as HTMLSelectElement;
+    this.valueList = selectElement.value;
+    console.log(this.valueList)
+  }
 
 
 
